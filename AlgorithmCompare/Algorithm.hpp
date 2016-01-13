@@ -10,7 +10,13 @@
 #include <vector>
 #include <random>
 #include <cmath>
+#include <map>
 #include <iostream>
+
+struct indexPair {
+    int first;
+    int second;
+};
 
 class Algorithm {
 public:
@@ -19,6 +25,8 @@ public:
     virtual ~Algorithm();
     virtual int MaxSomme();
     void generate(int n); //Generate a tab with n integers from -100 to 100
+    std::vector<indexPair> getAllPositionsPairs(); //Generate all pairs of positions
+    int sumIndex(int begin, int end); //calculate sum from begin to end index
 private:
     std::vector<int> tab;
     

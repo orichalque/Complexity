@@ -16,6 +16,9 @@ using namespace std;
 int main(int argc, char** argv) {
     PairAlgorithm a;
     a.generate(5);
+    //a.getAllPositionsPairs();
+    
+    cout << "somme:" << a.sumIndex(0, 4);
     return 0;
 }
 
