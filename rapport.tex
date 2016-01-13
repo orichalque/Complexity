@@ -1,0 +1,40 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[francais]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\author{Thibault \bsc{BEZIERS LA FOSSE}}
+\date{}
+\title{Étude et Comparaison d'Algorithmes}
+
+\pagestyle{fancy}
+\begin{document}
+
+\maketitle
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+Ce projet en six séances à pour objectif d'implémenter des algorithmes, afin de calculer leurs complexités et comparer les performances. 
+Quatre algorithmes sont à notre disposition, ce compte rendu les traitera dans l'ordre donné. Seront expliqués:
+\begin{enumerate}
+\item[L'implémentation]
+\item[La complexité théorique]
+\item[Les résultats d'exécutions]
+\item[L'analyse des résultats]
+\item[Le comparatif des résultats théoriques et expérimentaux]
+\end{enumerate}
+\subsection{Objectif}
+Les quatre algorithmes à implémenter consistent à trouver la suite de termes du tableau dont la somme est maximum. 
+Les éléments du tableau sont choisis de manière aléatoire, et nous exécuterons nos algorithmes sur des tableaux de tailles variables, en commençant par des tableaux de moins d'une dizaine d'éléments, à des tableaux qui en contiennent des dizaines de milliers.  
+\subsection{Outils utilisés}
+Le langage de programmation à utiliser pour ce projet étant libre, j'ai choisi de m'orienter vers le C++. D'abord pour une raison pratique, l'université nous fait régulièrement utiliser ce langage. Ensuite pour des raisons de performances, car C++ reste un langage assez efficace pour effectuer des opérations comme celles de ce projet.
+Le compilateur utilisé est G++, avec la librairie C++11. Effectivement, G++ est disponible à l'université, et la librairie C++11 offre des méthodes efficaces, et surtout pratiques pour manipuler des tableaux. 
+\subsection{Structure du programme}
+Quatre algorithmes étant à effectuer, j'ai choisi de créer une arborescence de classes sur un seul niveau. En haut, une classe abstraite implémentant les principales méthodes nécessaires à l’exécution des algorithmes, et en bas les algorithmes qui redéfinissent la méthode de calcul de la méthode \bsc{MaxSomme}.
+\section{Algorithme 1 : PairAlgorithm}
+\subsection{Implémentation}
+
+\end{document}

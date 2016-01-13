@@ -45,9 +45,6 @@ void Algorithm::generate(int n) {
     for (int i = 0; i < n; ++i) {
         tab.push_back(uniform_dist(e1));
     }
-    for (auto i : tab){
-        cout << "val:" << i << endl;
-    }
 }
 
 /**
@@ -64,23 +61,18 @@ int Algorithm::MaxSomme() {
  * @return a vector containing all couples
  */
 vector<indexPair> Algorithm::getAllPositionsPairs() {
-    int tabSize = tab.size() - 1;
+    int tabSize = tab.size();
     int currentIndex(0);
     indexPair ip;
     vector<indexPair> indexPairV; //Vector containing all pairs of indexes
     while (currentIndex != tabSize) {                
-        for (int i = currentIndex +1; i < tabSize ; ++i) {            
+        for (int i = currentIndex; i < tabSize ; ++i) {            
             ip.first = currentIndex;
             ip.second = i;
-            indexPairV.push_back(ip);            
+            indexPairV.push_back(ip);         
         }
         currentIndex ++;
     }    
-    for (auto i : indexPairV) {
-        cout << i.first << " ";
-        cout << i.second << endl;
-    }
-    
     return indexPairV;
 }
 

@@ -6,7 +6,7 @@
  */
 
 #include <cstdlib>
-
+#include <chrono>
 #include "PairAlgorithm.hpp"
 using namespace std;
 
@@ -14,11 +14,15 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+    //compteur
+    auto begin = std::chrono::high_resolution_clock::now();
+
+   
     PairAlgorithm a;
-    a.generate(5);
-    //a.getAllPositionsPairs();
-    
-    cout << "somme:" << a.sumIndex(0, 4);
+    a.generate(3500);
+    a.MaxSomme();
+    auto end = std::chrono::high_resolution_clock::now();
+    std::cout << std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count() << "ms" << std::endl;
     return 0;
 }
 
