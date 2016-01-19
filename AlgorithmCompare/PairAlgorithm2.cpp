@@ -16,7 +16,7 @@ PairAlgorithm2::PairAlgorithm2(const PairAlgorithm2& orig) {
 PairAlgorithm2::~PairAlgorithm2() {
 }
 
-PairAlgorithm2::MaxSomme() {
-    int SOMME = [];
-    
+int PairAlgorithm2::MaxSomme() {
+   
+    return 0;
 }

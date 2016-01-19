@@ -45,8 +45,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-std=c++11
-CXXFLAGS=-std=c++11
+CCFLAGS=-std=c++11 -O2
+CXXFLAGS=-std=c++11 -O2
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -68,22 +68,22 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/algorithmcompare: ${OBJECTFILES}
 ${OBJECTDIR}/Algorithm.o: Algorithm.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Algorithm.o Algorithm.cpp
+	$(COMPILE.cc) -O3 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Algorithm.o Algorithm.cpp
 
 ${OBJECTDIR}/PairAlgorithm.o: PairAlgorithm.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PairAlgorithm.o PairAlgorithm.cpp
+	$(COMPILE.cc) -O3 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PairAlgorithm.o PairAlgorithm.cpp
 
 ${OBJECTDIR}/PairAlgorithm2.o: PairAlgorithm2.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PairAlgorithm2.o PairAlgorithm2.cpp
+	$(COMPILE.cc) -O3 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PairAlgorithm2.o PairAlgorithm2.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O3 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

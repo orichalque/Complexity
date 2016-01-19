@@ -28,7 +28,7 @@ Algorithm::~Algorithm() {
 }
 
 /**
- * @brief Generate n random values from -100 to 100 in the tab parameter
+ * @brief Generate n random values from -1000 to 1000 in the tab parameter
  * Will clear the tab if not empty
  * @param n, number of values
  */
@@ -39,9 +39,9 @@ void Algorithm::generate(int n) {
     // Seed with a real random value, if available
     std::random_device rd;
  
-    // Choose a random mean between -100 and 100
+    // Choose a random mean between -1000 and 1000
     std::default_random_engine e1(rd());
-    std::uniform_int_distribution<int> uniform_dist(-100, 100);
+    std::uniform_int_distribution<int> uniform_dist(-1000, 1000);
     for (int i = 0; i < n; ++i) {
         tab.push_back(uniform_dist(e1));
     }

@@ -42,8 +42,9 @@
       </toolsSet>
       <compileType>
         <ccTool>
+          <developmentMode>6</developmentMode>
           <commandlineTool>g++</commandlineTool>
-          <commandLine>-std=c++11</commandLine>
+          <commandLine>-std=c++11 -O2</commandLine>
         </ccTool>
       </compileType>
       <item path="Algorithm.cpp" ex="false" tool="1" flavor2="0">
