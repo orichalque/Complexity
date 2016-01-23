@@ -81,12 +81,19 @@ FinPour
 \end{verbatim}
 Cet algorithme est assez simple à implémenter, et nécessaire pour plusieurs des algorithmes de MaxSomme. 
 Détail du calcul de sa complexité théorique:
-\begin{verbatim}
-Boucle 1: effectuée n-1 fois
-Boucle 2: effectuée (n-2) + (n-3) + (n-4) + ... + n-(n-1) fois
-          soit 1 + 2 + ... + n-2
-\end{verbatim}
+
+Boucle 1: effectuée $n-1$ fois
+
+Boucle 2: effectuée $(n-2) + (n-3) + (n-4) + ... + n-(n-1)$ fois
+soit $1 + 2 + ... + n-2$
+
 Ainsi on a la somme des entiers de 1 à n-2 qui peut être calculée ainsi:
+
+\begin {center}
+$\frac{(n-3)(n-2)}{2}$
+\end{center}
+
+Sans détailler le calcul, on voit immédiatement qu'on a un produit de $n$, on peut donc en déduire une complexité en $O(n^2)$.
 
 \subsubsection{Méthode: sumIndex(Int a, Int b): int}
 Cette méthode est simple, elle prend deux entiers en paramètre, qui sont chacun un indice du tableau, et calcule la somme des cases du tableau entre ces deux indices. Cet algorithme est récursif:
@@ -112,11 +119,49 @@ pour chaque paire p:
 fin pour
 retourner max
 \end{verbatim}
-
+L'implémentation en $C++$ est visible dans le programme ci-joint.
 \subsection{Complexité théorique}
-La complexité de cet algorithme repose sur la complexité des méthodes utilisées.
+La complexité de cet algorithme repose sur la complexité des méthodes utilisées. 
+On utilise la méthode \emph{getPositionPairs} qui est en $O(n^2)$ et pour chaque résultat obtenu on effectue une méthode en $O(1)$  
+On peut donc aisément en déduire que la complexité finale de cet algorithme est en $O(n^2)$
 
 \subsection{Résultats d’exécutions}
+L'algorithme a été exécuté sur des tableaux de taille variable, de 1 à 4000 éléments, en augmentant progressivement le pas. On obtient les résultats suivants:
+\begin{tabular}{|l|l|}
+\hline
+Taille & Temps (secondes) //
+\hline
+	1&	0,01 \\
+  2 & 0,01\\
+  3 & 0,01\\
+  4& 0,01\\
+  5& 0,01\\
+  6& 0,01\\
+  7& 0,01\\
+  8& 0,01\\
+  9& 0,01\\
+  10& 0,01\\
+  20& 0,01\\
+  40& 0,01\\
+  60& 0,01\\
+  80& 0,01\\
+  100& 0,01\\
+  200& 0,013\\
+  400& 0,091\\
+  600& 0,264\\
+  800& 0,62\\
+  1000& 1,18//
+  1500&	3,981//
+  2000&	9,474//
+  2500&	18,58//
+  3000&	32,221//
+  3500&	51,193//
+  4000&	76,61//
+  6000&	PAR//
+  \hline
+\end{tabular}
+
+  
 \subsection{Analyse}
 
 

@@ -1,3 +1,4 @@
+\select@language {french}
 \contentsline {section}{\numberline {1}Introduction}{3}
 \contentsline {subsection}{\numberline {1.1}Objectif}{3}
 \contentsline {subsection}{\numberline {1.2}Outils utilis\IeC {\'e}s}{3}
@@ -9,5 +10,5 @@
 \contentsline {section}{\numberline {2}Algorithme 1 : PairAlgorithm}{5}
 \contentsline {subsection}{\numberline {2.1}Impl\IeC {\'e}mentation}{5}
 \contentsline {subsection}{\numberline {2.2}Complexit\IeC {\'e} th\IeC {\'e}orique}{5}
-\contentsline {subsection}{\numberline {2.3}R\IeC {\'e}sultats d\IeC {\textquoteright }ex\IeC {\'e}cutions}{5}
-\contentsline {subsection}{\numberline {2.4}Analyse}{5}
+\contentsline {subsection}{\numberline {2.3}R\IeC {\'e}sultats d\IeC {\textquoteright }ex\IeC {\'e}cutions}{6}
+\contentsline {subsection}{\numberline {2.4}Analyse}{6}
