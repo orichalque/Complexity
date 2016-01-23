@@ -15,8 +15,8 @@ NM=nm
 CCADMIN=CCadmin
 RANLIB=ranlib
 CC=gcc
-CCC=g++
-CXX=g++
+CCC=g++-4.9
+CXX=g++-4.9
 FC=gfortran
 AS=as
 
@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Algorithm.o \
 	${OBJECTDIR}/PairAlgorithm.o \
 	${OBJECTDIR}/PairAlgorithm2.o \
+	${OBJECTDIR}/RecursiveAlgorithm.o \
 	${OBJECTDIR}/main.o
 
 
@@ -79,6 +80,11 @@ ${OBJECTDIR}/PairAlgorithm2.o: PairAlgorithm2.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PairAlgorithm2.o PairAlgorithm2.cpp
+
+${OBJECTDIR}/RecursiveAlgorithm.o: RecursiveAlgorithm.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/RecursiveAlgorithm.o RecursiveAlgorithm.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

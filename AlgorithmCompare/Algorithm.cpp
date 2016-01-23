@@ -19,6 +19,7 @@ Algorithm::Algorithm() {
  * @param orig
  */
 Algorithm::Algorithm(const Algorithm& orig) {
+
 }
 
 /**
@@ -90,3 +91,33 @@ int Algorithm::sumIndex(int begin, int end) {
         return tab[begin] + sumIndex(begin + 1, end);
     }
 }
+
+/**
+ * @brief Return the maximum between a and b
+ * @param a
+ * @param b
+ * @return a or b
+ */
+int Algorithm::max(int a, int b){
+    return (a > b)? a : b;
+}
+
+/**
+ * @brief return the maximum between a, b and c
+ * @param a
+ * @param b
+ * @param c
+ * @return a or b or c
+ */
+int Algorithm::max3(int a, int b, int c){
+    return (max(max(a, b), c));
+}
+
+/**
+ * @brief getter for the tab
+ * @return tab vector
+ */
+vector<int> Algorithm::getTab() {
+    return tab;
+}
+
