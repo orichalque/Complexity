@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.3)  22 JAN 2016 13:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.3)  26 JAN 2016 13:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -553,243 +553,62 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 ) [3
 
  <./diagramme.png>]
-[4]
-! Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.132 	\hline
-             
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
+[4] <curve_algo_1.png, id=32, 455.45157pt x 255.95625pt>
+File: curve_algo_1.png Graphic file (type png)
 
-! You can't use `\hrule' here except with leaders.
-\hline ->\noalign {\ifnum 0=`}\fi \hrule 
-                                         \@height \arrayrulewidth \futurelet...
-l.132 	\hline
-             
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
+<use curve_algo_1.png>
+Package pdftex.def Info: curve_algo_1.png used on input line 158.
+(pdftex.def)             Requested size: 273.27304pt x 153.57492pt.
 
-! Missing number, treated as zero.
-<to be read again> 
-                   \futurelet 
-l.132 	\hline
-             
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \futurelet 
-l.132 	\hline
-             
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.133 	1&
-         	0,01 //
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.135   3 &
-            0,01//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.137   5&
-           0,01//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.139   7&
-           0,01//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.141   9&
-           0,01//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.143   20&
-            0,01//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.145   60&
-            0,01//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.147   100&
-             0,01//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.149   400&
-             0,091//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.151   800&
-             0,62//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.153   1500&
-             	3,981//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.155   2500&
-             	18,58//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.157   3500&
-             	51,193//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Extra alignment tab has been changed to \cr.
-<recently read> \endtemplate 
-                             
-l.159   6000&
-             	PAR//
-You have given more \span or & marks than there were
-in the preamble to the \halign or \valign now in progress.
-So I'll assume that you meant to type \cr instead.
-
-! Misplaced \noalign.
-\hline ->\noalign 
-                  {\ifnum 0=`}\fi \hrule \@height \arrayrulewidth \futurelet...
-l.160   \hline
-              
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-! You can't use `\hrule' here except with leaders.
-\hline ->\noalign {\ifnum 0=`}\fi \hrule 
-                                         \@height \arrayrulewidth \futurelet...
-l.160   \hline
-              
-To put a horizontal rule in an hbox or an alignment,
-you should use \leaders or \hrulefill (see The TeXbook).
-
-! Missing number, treated as zero.
-<to be read again> 
-                   \futurelet 
-l.160   \hline
-              
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \futurelet 
-l.160   \hline
-              
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-Overfull \hbox (141.49753pt too wide) in paragraph at lines 129--162
-\T1/cmr/m/n/12 aug-men-tant pro-gres-si-ve-ment le pas. On ob-tient les ré-sul-
-tats sui-vants : [] 
+Overfull \hbox (1.48955pt too wide) in paragraph at lines 158--159
+[][] 
  []
 
-[5] [6] (./rapport.aux) ) 
+<curve_n_2.png, id=33, 552.0625pt x 203.76125pt>
+File: curve_n_2.png Graphic file (type png)
+ <use curve_n_2.png>
+Package pdftex.def Info: curve_n_2.png used on input line 160.
+(pdftex.def)             Requested size: 276.03056pt x 101.88037pt.
+
+Overfull \hbox (4.24707pt too wide) in paragraph at lines 160--161
+[][] 
+ []
+
+
+Overfull \hbox (17.6248pt too wide) in paragraph at lines 131--162
+[]$[]$ $[]$ 
+ []
+
+[5] [6 <./curve_algo_1.png (PNG copy)> <./curve_n_2.png>] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 4294 strings out of 494999
- 55861 string characters out of 6180228
- 128611 words of memory out of 5000000
- 7421 multiletter control sequences out of 15000+600000
+ 4304 strings out of 494999
+ 56044 string characters out of 6180228
+ 129611 words of memory out of 5000000
+ 7429 multiletter control sequences out of 15000+600000
  19453 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,10n,43p,364b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
- </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappe
-n/ec/ecti1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ectt1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1
-200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.6
-00pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk>
- </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </co
-mptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsl1200.600pk> </comptes
-/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </comptes/E104
-607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </comptes/E104607D/
-.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </comptes/E104607D/.texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb>
-Output written on rapport.pdf (6 pages, 172330 bytes).
+ 38i,10n,43p,534b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </c
+omptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </compte
+s/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </comptes/E10
+4607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1200.600pk> </comptes/E104607D
+/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </comptes/E104607D/.tex
+mf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </comptes/E104607D/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </comptes/E104607D/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/ecsl1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk
+/ljfour/jknappen/ec/ecrm1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/eccc1440.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jk
+nappen/ec/ecrm1440.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappe
+n/ec/ecrm2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on rapport.pdf (6 pages, 213263 bytes).
 PDF statistics:
- 405 PDF objects out of 1000 (max. 8388607)
- 76 compressed objects within 1 object stream
+ 406 PDF objects out of 1000 (max. 8388607)
+ 77 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

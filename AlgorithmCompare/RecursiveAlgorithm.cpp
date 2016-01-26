@@ -41,7 +41,7 @@ int RecursiveAlgorithm::MaxSomme(){
  * @param end
  * @return 
  */
-int calcul3(int begin, int end){
+int RecursiveAlgorithm::calcul3(int begin, int end){
     
     if (begin > end){
         return 0;

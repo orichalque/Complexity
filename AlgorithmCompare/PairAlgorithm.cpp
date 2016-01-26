@@ -47,4 +47,5 @@ int PairAlgorithm::MaxSomme() {
     }
     cout << "MaxValue :" << maxValue << endl;
     cout << "Début: " << maxPair.first << " Fin: " << maxPair.second << endl;
+    return maxValue;
 }

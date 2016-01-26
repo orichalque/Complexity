@@ -23,11 +23,13 @@ int main(int argc, char** argv) {
         cout << "Taille des données : " << argv[2] << endl;
         switch (stoi(argv[1])){
             case 1:
+                cout << "Algorithme 1"<< endl;
                 a = new PairAlgorithm();
                 a -> generate(stoi(argv[2]));
                 break;
                 
             case 2:
+                cout << "Algorithme 2"<< endl;
                 a = new  PairAlgorithm2();
                 a -> generate(stoi(argv[2]));
                 break;
@@ -49,7 +51,7 @@ int main(int argc, char** argv) {
         a -> generate(5000);
     }
 
-    cout << "Max Somme: " <<  a -> MaxSomme() << endl;
+    a -> MaxSomme();
 
     
     auto end = std::chrono::high_resolution_clock::now();

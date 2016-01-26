@@ -54,6 +54,7 @@ int PairAlgorithm2::MaxSomme() {
     vector<indexPair> pairs;
     pairs = getAllPositionsPairs();
     vector<int> sommes = calculateSommeTab();
+    indexPair maxPair;
     int max = NAN;
     int current(0);
     for (auto i : pairs){
@@ -64,9 +65,12 @@ int PairAlgorithm2::MaxSomme() {
         }
         
         if((max == NAN)||(current > max)){
+            maxPair.first = i.first;
+            maxPair.second = i.second;
             max = current;
         }                
     }
-    
+    cout << "MaxValue :" << max << endl;
+    cout << "Début: " << maxPair.first << " Fin: " << maxPair.second << endl;
     return max;
 }
