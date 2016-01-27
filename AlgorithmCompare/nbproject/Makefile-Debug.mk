@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Algorithm.o \
 	${OBJECTDIR}/PairAlgorithm.o \
 	${OBJECTDIR}/PairAlgorithm2.o \
+	${OBJECTDIR}/QuickAlgorithm.o \
 	${OBJECTDIR}/RecursiveAlgorithm.o \
 	${OBJECTDIR}/main.o
 
@@ -80,6 +81,11 @@ ${OBJECTDIR}/PairAlgorithm2.o: PairAlgorithm2.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O3 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PairAlgorithm2.o PairAlgorithm2.cpp
+
+${OBJECTDIR}/QuickAlgorithm.o: QuickAlgorithm.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O3 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/QuickAlgorithm.o QuickAlgorithm.cpp
 
 ${OBJECTDIR}/RecursiveAlgorithm.o: RecursiveAlgorithm.cpp 
 	${MKDIR} -p ${OBJECTDIR}

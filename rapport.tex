@@ -104,7 +104,7 @@ Sinon
     Retourner tab[debut] + sumIndex(debut+1, fin)
 Fin
 \end{verbatim}
-On a une complexité en $O(n)$.
+On a une complexité en $\omega(1)$ si on désire la somme entre les deux mêmes cellules, et en $O(n)$ pour une somme du début à la fin du tableau.
 \section{Algorithme 1 : PairAlgorithm}
 \subsection{Implémentation}
 Cet algorithme est facile à implémenter et repose surtout sur les principales méthodes de la classe mère $Algorithm$:
@@ -122,8 +122,8 @@ retourner max
 L'implémentation en $C++$ est visible dans le programme ci-joint.
 \subsection{Complexité théorique}
 La complexité de cet algorithme repose sur la complexité des méthodes utilisées. 
-On utilise la méthode \emph{getPositionPairs} qui est en $O(n^2)$ et pour chaque résultat obtenu on effectue une méthode en $O(1)$  
-On peut donc aisément en déduire que la complexité finale de cet algorithme est en $O(n^2)$
+On utilise la méthode \emph{getPositionPairs} qui est en $\theta(n^2)$ et pour chaque résultat obtenu on effectue une méthode en $O(n)$  : \emph{SumIndex}.
+On peut donc en déduire que la complexité finale de cet algorithme est en $O(n^3)$
 
 \subsection{Résultats d’exécutions}
 L'algorithme a été exécuté sur des tableaux de taille variable, de 1 à 4000 éléments, en augmentant progressivement le pas. On obtient les résultats suivants:
@@ -152,15 +152,178 @@ L'algorithme a été exécuté sur des tableaux de taille variable, de 1 à 4000
    12000& 	39960\\
    13500& 	56736\\
    14000& 	PAR\\
+   \hline
    \end{tabular}
 \end{minipage}\hfill
 \begin{minipage}[c]{0.6\linewidth}
 	\includegraphics[scale=0.6]{curve_algo_1.png}
-	
-	\includegraphics[scale=0.5]{curve_n_2.png}
+ 	Voici la courbe obtenue en calculant le rapport $n/t$. L'augmentation des données n'étant pas régulière, cette courbe est bien plus représentative de l'évolution du temps d'exécution en fonction de la taille des données.
+ 	On la compare à la courbe de $f(x)=x/x^3$.
+ 	\includegraphics[scale=0.4]{x_x3.png}
+ 	Elles ont effectivement, à peu prêt, la même allure. 
 \end{minipage}
 \subsection{Analyse}
-En observant les résultats d’exécution, on peut clairement voir que le temps augmente très rapidement à partir de $n=100$. On ignore les valeur antérieure car la vitesse d’exécution de l'algorithme est instantanée sur des données inférieures. En observant la courbe on remarque que la complexité temporelle correspond à la croissance de la fonction $f(x) = x^2$. Ainsi on peut affirmer que la complexité théorique calculée correspond à celle obtenue avec l'analyse de l'algorithme: $\theta (n^2)$.
+En observant les résultats d’exécution, on peut clairement voir que le temps augmente très rapidement à partir de $n=100$. On ignore les valeur antérieure car la vitesse d’exécution de l'algorithme est instantanée sur des données inférieures. En observant la courbe on remarque que la complexité temporelle correspond à la croissance de la fonction $f(x) = x^3$. Ainsi on peut affirmer que la complexité théorique calculée correspond à celle obtenue avec l'analyse de l'algorithme: $\theta (n^3)$.
+\section{Algorithme 2: PairAlgorithm2}
+\subsection{Implémentation}
+Comme l'indique le sujet, cet algorithme fonctionne en deux temps. Dans un premier temps on remplit un tableau \bsc{SOMME} parallèle au tableau \bsc{Tab} qui, pour chaque cellule de \bsc{Tab} contient la somme depuis la première cellule, jusqu'à la cellule courante. Par exemple:
 
+\begin{tabular}{|ccccccccc|}
+\hline
+\multicolumn{9}{|c|}{\bsc{Tab}} \\
+\hline
+Cellule: & 1& 2& 3& 4& 5& 6& 7& 8 \\
+Valeur: & 3 & 4 & 8 & 9 & 2 & 1 & 4 & 5 \\
+\hline
+\end{tabular}
+
+\begin{tabular}{|ccccccccc|}
+\hline
+\multicolumn{9}{|c|}{\bsc{Somme}} \\
+\hline
+Cellule: & 1& 2& 3& 4& 5& 6& 7& 8 \\
+Valeur: & 3 & 7 & 15 & 24 & 26 & 27 & 31 & 36 \\
+\hline
+\end{tabular}
+
+    \noindent De cette manière on peut aisément connaître la Somme entre deux indices du tableau en soustrayant la seconde somme à la première. Par exemple, pour connaître la somme des nombres entre la cellule 3 et la cellule 6 de \bsc{Tab} on peut soit faire:
+
+    \noindent $8 + 9 + 2 = 19$ avec le tableau \bsc{Tab} comme avec l'algorithme \emph{PairAlgorithm}. 
+
+    Ou alors :
+
+    \noindent $26 - 7 = 19$ avec le tableau \bsc{Somme}.
+
+    \noindent On a donc comme méthodes:
+\subsubsection{CalculateSommeTab}
+\begin{verbatim}
+Somme = []
+current = 0
+pour i allant de 1 à taille de Tab:
+    current += Tab[i]
+    Somme[i] = current
+finPour
+retourner Somme
+\end{verbatim}
+L'algorithme consiste à faire un parcours du tableau, et à sommer les cellules précédentes à la courante. La complexité est en $\theta(n)$, puisque l'on ne fait qu'un unique parcours du tableau.
+\subsubsection{MaxSomme}
+\begin{verbatim}
+Somme = CalculateSommeTab()
+Paires = getAllPositionPairs()
+Max = NaN
+Pour chaque paire p de Paires:
+    si p.first = 1
+        courant = Somme[p.second]
+    sinon
+        courant = Somme[p.second] - Somme[p.first]
+    finSi
+    si courant > max || max = NaN
+        max = courant
+    finSi
+FinPour	
+\end{verbatim}
+\subsection{Complexité Théorique}
+\emph{CalculateSommeTab} a une complexité en $\theta(n)$. On retrouve ici la méthode \emph{getAllPositionPairs} dont on avait fixé la complexité à $\theta(n^2)$. Et pour chaque paires obtenues on effectue une opération en $\theta(1)$. On peut donc déterminer une complexité en $\theta(n^2)$ pour cet algorithme. On gagne un ordre de grandeur par rapport à l'algorithme précédent, qui devrait se ressentir lors des résultats d’exécution. 
+\subsection{Résultats d’exécution}
+On exécute le programme sur des tableaux de taille de plus en plus grande. On s'arrête lorsque le programme est trop lent, ou la mémoire de l'ordinateur ne suffit pas. On obtient ainsi les résultats suivants:
+
+\begin{minipage}[c]{0.4\linewidth}
+\begin{tabular}{|c|c|}
+\hline
+Taille & Temps(millisecondes) \\
+\hline
+100	& 0\\
+200	& 1\\
+300	& 2\\
+500 & 6\\
+800& 	10\\
+1000& 	12\\
+1500& 	18\\
+2000& 	32\\
+3000& 	51\\
+4000& 	80\\
+5000& 	124\\
+7000& 	245\\
+10000& 	479\\
+15000& 	1038\\
+20000& 	1870\\
+30000& 	4098\\
+40000& 	7450\\
+45000& 	8989\\
+50000& 	DM\\
+\hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.6\linewidth}
+	\includegraphics[scale=0.6]{curve_algo_2.png}
+	 	Voici la courbe obtenue en calculant le rapport $n/t$.
+	 	On la compare à la courbe de $f(x)=x/x^2$.
+	\includegraphics[scale=0.4]{x_x2.png}
+	Elles ont presque la même allure.
+\end{minipage}\hfill
+\subsection{Analyse}
+La première chose que l'on puisse dire, c'est ce que cet algorithme est nettement plus efficace que le précédent. Effectivement, on s'arrête parce que la mémoire de l'ordinateur ne suffit plus. Sans ça le temps d’exécution pour un tableau de taille $n=45000$ reste tout à fait correct. On boit bien que le temps d’exécution augmente de plus en plus vite en fonction de la taille des données, on a bien une correspondance avec la complexité théorique calculée: $\theta(n^2)$.
+
+
+\section{Algorithme 3: Recursive Algorithm}
+\subsection{Implémentation}
+\subsection{Complexité Théorique}
+\subsection{Résultats d’exécution}
+\subsection{Analyse}
+
+\section{Algorithme 4: Quick Algorithm}
+\subsection{Implémentation}
+Cet algorithme est tout petit en taille, et très efficace. C'est pour ça qu'il porte le nom de \emph{Quick Algorithm}. Son implémentation tient en quelques lignes, n'utilise aucune méthodes complexe:
+\begin{verbatim}
+a=0
+b=0
+i=1
+Tant que i <= n faire:
+    b = max(b+T[i], 0)
+    a = max(a, b)
+    i++
+Fin TantQue
+Retourner a
+\end{verbatim}
+Il est beaucoup plus simple à comprendre que le précédent: On fait un unique parcours du tableau, et tant que la somme des cellules successives est croissante on la conserve dans la variable b, et si cette valeur dépasse le maximum, on écrase le maximum avec cette nouvelle valeur.
+\subsection{Complexité Théorique}
+Cet algorithme n'effectue qu'un seul parcours du tableau, et pour chaque itération, n'effectue que des opérations en temps constant: deux additions, et deux maximums. 
+La complexité obtenue est donc de $\theta(n)$. Le coût en espace aussi est maximum, puisque l'on ne stocke que le tableau lui même, et 3 variables entières (32 bits chacune), le coût en mémoire est donc aussi excellent.  
+\subsection{Résultats d’exécution}
+Voici les résultats d'exécution de l'algorithme 4. On commence avec des données de taille $n=10000$, puisque avec des données de taille inférieure, les temps d'exécution restent figés à 0. 
+
+\begin{minipage}[c]{0.4\linewidth}
+\begin{tabular}{|r|c|}
+\hline
+n & t(ms) \\
+\hline
+10000 &	0\\
+20000 &	1\\
+40000& 	2\\
+50000 &	3\\
+100000 &	5\\
+500000	 & 20\\
+1000000& 	39 \\
+2000000&	77\\
+3000000&	113\\
+4000000&	147\\
+5000000&	185\\
+10000000&	367\\
+50000000&	1788\\
+100000000&	3556\\
+150000000&	5491\\
+200000000&	7132\\
+250000000&	8832\\
+300000000& DM\\
+\hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.6\linewidth}
+	\includegraphics[scale=0.6]{curve_algo_4.png}
+	 	Voici la courbe obtenue en calculant le rapport $n/t$. 
+		On remarque que au début, les valeurs sont assez variables. C'est dû au peu de précision des données avec le chronomètre. Néanmoins à partir de $n=5000000$ on remarque que la courbe est presque constante.
+\end{minipage}
+\subsection{Analyse}
+La courbe presque constante au dessus appuie la complexité théorique que nous avons calculé. On peut donc affirmer que la complexité de cet algorithme est en $\theta(n)$. 
 
 \end{document}

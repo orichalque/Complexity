@@ -31,16 +31,16 @@ PairAlgorithm2::~PairAlgorithm2() {
 
 /**
  * @brief Calculate the SOMME tab for the 2nd algorithm
- * For each cell of tab, calculate the sum from the first cell to the current one
+ * Add The cells of the Tab array and put it, cell by cell, in the Somme array.
  * @return SOMME, vector containing the sum from the first cell for each tab's cell
  */
 vector<int> PairAlgorithm2::calculateSommeTab(){
     vector<int> somme;
-    
-    for (int i = 0; i < tab.size(); ++i){
-        somme.push_back(sumIndex(0, i));        
+    int current(0);
+    for (int i = 0; i < tab.size(); ++i) {
+        current += tab[i];
+        somme.push_back(current);
     }
-    
     return somme;
 }
 

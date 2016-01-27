@@ -9,6 +9,8 @@
 #include <chrono>
 #include "PairAlgorithm.hpp"
 #include "PairAlgorithm2.hpp"
+#include "RecursiveAlgorithm.hpp"
+#include "QuickAlgorithm.hpp"
 using namespace std;
 
 /*
@@ -35,11 +37,15 @@ int main(int argc, char** argv) {
                 break;
                 
             case 3:
-                //algo3
+                cout << "Algorithme 3"<< endl;
+                a = new RecursiveAlgorithm();
+                a -> generate(stoi(argv[2]));
                 break;
             
             case 4:
-                //algo4
+                cout << "Algorithme 4"<< endl;
+                a = new QuickAlgorithm();
+                a -> generate(stoi(argv[2]));
                 break;
                 
             default:
