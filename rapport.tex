@@ -267,10 +267,124 @@ La première chose que l'on puisse dire, c'est ce que cet algorithme est netteme
 
 \section{Algorithme 3: Recursive Algorithm}
 \subsection{Implémentation}
-\subsection{Complexité Théorique}
-\subsection{Résultats d’exécution}
-\subsection{Analyse}
+Des quatre algorithmes à implémenter, celui-ci a la complexité la plus compliquée à calculer, de par la longueur de l'algorithme, mais aussi à cause de sa récursivité. L'algorithme intéressant est dans la méthode \emph{calcul3}, que l'on appelle dans la méthode \emph{maxSomme} sur un tableau de taille $n$:
+\subsubsection{MaxSomme}
+\begin{verbatim}
+retourner calcul3(1, n)
+\end{verbatim}
+\subsubsection{calcul3}
+La méthode \emph{calcul3} fonctionne en quatre temps. Tout d'abord on a deux conditions d'arrêt: Lorsque la cellule de début est après la cellule de fin, ou lorsque la cellule de début et celle de fin est la même.
+\begin{verbatim}
+si (début > fin):
+    retourner 0
+fin si
 
+si (début == fin):
+    si (tab[début] > 0):
+        retourner tab[début]
+    sinon
+        retourner 0
+    fin si        
+fin si   
+\end{verbatim}
+Si la cellule de début est après la cellule de fin, c'est qu'on a une incohérence lors de l'appel de la méthode, et que son utilisation n'est pas respectée. Ainsi on s'arrête en retournant 0. Enfin si la cellule de début et celle de fin est la même, c'est que la somme maximum entre les deux n'a pas à être calculée, et dans ce cas on retourne 0 si l'indice est inférieur à 0 (ce n'est pas un maximum, c'est négatif), ou bien on retourne l'indice en question.
+La suite de l'algorithme consiste à prendre la cellule située au milieu du tableau, puis à calculer la somme entre la cellule du début et celle du milieu, et entre celle du milieu et celle de la fin et enfin de calculer le maximum entre-elles.
+Ainsi on a :
+\begin{verbatim}
+milieu = (debut+fin)/2
+maxGauche = 0
+somme = 0
+i = milieu
+tant que i >= début:
+    somme += tab[i]
+    maxGauche = Maximum(somme, maxGauche)
+    i--
+fin tant que 
+\end{verbatim}
+On somme tous les éléments du début au milieu, et on garde le maximum.
+\begin{verbatim}
+maxDroit = 0
+somme = 0
+i = milieu + 1
+tant que i <= fin:
+    somme += tab[i]
+    maxDroit = Maximum(somme, maxDroit)
+    i++
+fin tant que 
+\end{verbatim}
+Même chose, sauf qu'on somme tous les éléments du milieu à la fin, et on garde le maximum.
+Enfin on calcule le maximum entre \emph{maxDroit + maxGauche}, et la fonction appelée à nouveau sur la partie gauche et la partie droite du tableau.
+\subsection{Complexité Théorique}
+Ici la complexité dépend du nombre d'exécution de l'algorithme. On calcule succinctement la complexité pour un tableau de taille n = 8:
+\begin{verbatim}
+n
++ 2*(1/2)*n   --> Méthode appelée une fois sur chaque demi tableau (de taille 1/2*n = 4) --> 2 appels
++ 4*(1/4)*n   --> Méthode appelée une fois sur chaque quart de tableau (de taille 1/4*n = 2) --> 4 appels
++ 8+(1/8)*n   --> Méthode appelée une fois sur chaque huitième de tableau (de taille 1/8*n = 1) --> 8 appels
+\end{verbatim} 
+Enfin, comme le tableau est de taille 1, on s'arrête là. 
+On a donc un coût de $4n$, comme $n = 8$, on a $1/2n*n = 32$. On peut alors s'attendre à une complexité supérieure à $n$ mais inférieure à $n^2$. 
+Plus spécifiquement, \emph{calcul3} est en $\Omega(n)$ et en $O(n^2)$.
+
+Dans cas général, pour un tableau de taille $n$ on appellera la fonction sur des demi-tableaux jusqu'à ce que $n$ soit réduit à 1. C'est à dire qu'on va faire des divisions successives de $n$ par $2$, jusqu'à 1: 
+$log _2  n$ divisions. 
+
+Chaque sous tableau est parcouru une fois, plus une fois pour le tableau de taille n, on calcule ainsi une complexité de:
+
+$n + (log _2 n)*n $
+$(1 + log _2)*n $
+
+On en déduit une complexité théorique en notation de Landau de $\theta(nlog(n))$.
+\subsection{Résultats d’exécution}
+L'exécution sur un tableau de taille croissante donne les résultats suivants. On s'arrête lorsque le temps d'exécution de l'algorithme est trop long, ou bien lorsque l'on dépasse la mémoire de l'ordinateur.
+
+\begin{minipage}[c]{0.4\linewidth}
+\begin{tabular}{|c|c|}
+\hline
+Taille & Temps(millisecondes) \\
+\hline
+5000&	0\\
+10000&	1\\
+50000&	6\\
+100000&	13\\
+200000&	24\\
+300000&	35\\
+400000&	43\\
+500000&	55\\
+1000000&	104\\
+2000000	& 211\\
+3000000&	322\\
+4000000	& 427\\
+5000000	& 543\\
+10000000&	1112\\
+20000000&	2269\\
+30000000&	3437\\
+40000000&	4638\\
+50000000&	5817\\
+100000000&	11908\\
+150000000&	18153\\
+200000000&	24323\\
+250000000&	30484\\
+300000000 &  DM \\
+\hline
+\end{tabular}
+\end{minipage}\hfill
+\begin{minipage}[c]{0.5\linewidth}
+	\includegraphics[scale=0.6]{curve_algo_3.png}
+	
+	
+    Voici la courbe obtenue en calculant le rapport $n/n log _2(n)$.
+    	 
+    On calcule ce rapport afin d'avoir toujours un temps d’exécution proportionnel à la taille des données, l'augmentation des données n'étant pas linéaire.
+        
+    On a une courbe qui descend progressivement, ce qui correspond bien à la complexité calculée.
+\end{minipage}\hfill
+\subsection{Analyse}
+On a des résultats nettement meilleurs que l'algorithme 2, tant en temps qu'en mémoire.
+
+Avec l'algorithme 2, pour un tableau de taille 45 000 on avait un temps d'exécution d'environ 9 secondes, alors qu'avec l'algorithme 3, pour un tableau de taille 50 000, on est à 55ms, c'est plus de 150fois mieux.
+On voit vraiment avec cet algorithme là qu'avec une différence d'un ordre de grandeur, le temps d'exécution est largement meilleur.
+ 
 \section{Algorithme 4: Quick Algorithm}
 \subsection{Implémentation}
 Cet algorithme est tout petit en taille, et très efficace. C'est pour ça qu'il porte le nom de \emph{Quick Algorithm}. Son implémentation tient en quelques lignes, n'utilise aucune méthodes complexe:
@@ -321,7 +435,9 @@ n & t(ms) \\
 \begin{minipage}[c]{0.6\linewidth}
 	\includegraphics[scale=0.6]{curve_algo_4.png}
 	 	Voici la courbe obtenue en calculant le rapport $n/t$. 
-		On remarque que au début, les valeurs sont assez variables. C'est dû au peu de précision des données avec le chronomètre. Néanmoins à partir de $n=5000000$ on remarque que la courbe est presque constante.
+		On remarque que au début, les valeurs sont assez variables. C'est dû au peu de précision des données avec le chronomètre utilisé, il aurait fallu une précision au nanomètre ici pour avoir des valeurs justes.
+		Néanmoins à partir de $n=4 000 000$ on remarque que la courbe est presque constante. 
+		Ca correspond tout à fait à la courbe d'une méthode de complexité $\theta(n)$.
 \end{minipage}
 \subsection{Analyse}
 La courbe presque constante au dessus appuie la complexité théorique que nous avons calculé. On peut donc affirmer que la complexité de cet algorithme est en $\theta(n)$. 

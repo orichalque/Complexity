@@ -19,6 +19,7 @@
 #include <QtGui/QLineEdit>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenuBar>
+#include <QtGui/QProgressBar>
 #include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
 #include <QtGui/QStatusBar>
@@ -43,6 +44,7 @@ public:
     QLineEdit *MaxValue;
     QLabel *label_3;
     QPushButton *pushButton;
+    QProgressBar *progressBar;
     QMenuBar *menuBar;
     QStatusBar *statusBar;
 
@@ -120,10 +122,16 @@ public:
 
         gridLayout->addWidget(pushButton, 8, 1, 1, 1);
 
+        progressBar = new QProgressBar(centralWidget);
+        progressBar->setObjectName(QString::fromUtf8("progressBar"));
+        progressBar->setValue(0);
+
+        gridLayout->addWidget(progressBar, 7, 1, 1, 1);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 20));
+        menuBar->setGeometry(QRect(0, 0, 400, 24));
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));

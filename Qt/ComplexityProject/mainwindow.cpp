@@ -15,69 +15,50 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+    ui -> progressBar ->setValue(0);
     ui -> ExecTime -> setText("");
     ui -> MaxValue -> setText("");
     if (ui -> PA1 -> isChecked()){
         a = new PairAlgorithm();
-        int data = (ui -> dataSize -> text()).toInt();
-        if (data > 0) {
-            a -> generate(data);
-            auto begin = std::chrono::high_resolution_clock::now();
-            int value = a -> MaxSomme();
-            auto end = std::chrono::high_resolution_clock::now();
-            int time = std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count();
-            ui -> ExecTime -> setText(QString::fromStdString(std::to_string(time)) + " ms");
-            ui -> MaxValue -> setText(QString::fromStdString(std::to_string(value)));
-        } else {
-            ui -> MaxValue -> setText("Incorrect DataSize");
-        }
     }
 
     if (ui -> PA2 -> isChecked()){
         a = new PairAlgorithm2();
-        int data = (ui -> dataSize -> text()).toInt();
-        if (data > 0) {
-            a -> generate(data);
-            auto begin = std::chrono::high_resolution_clock::now();
-            int value = a -> MaxSomme();
-            auto end = std::chrono::high_resolution_clock::now();
-            int time = std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count();
-            ui -> ExecTime -> setText(QString::fromStdString(std::to_string(time)) + " ms");
-            ui -> MaxValue -> setText(QString::fromStdString(std::to_string(value)));
-        } else {
-            ui -> MaxValue -> setText("Incorrect DataSize");
-        }
     }
 
     if (ui -> RA -> isChecked()){
         a = new RecursiveAlgorithm();
-        int data = (ui -> dataSize -> text()).toInt();
-        if (data > 0) {
-            a -> generate(data);
-            auto begin = std::chrono::high_resolution_clock::now();
-            int value = a -> MaxSomme();
-            auto end = std::chrono::high_resolution_clock::now();
-            int time = std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count();
-            ui -> ExecTime -> setText(QString::fromStdString(std::to_string(time)) + " ms");
-            ui -> MaxValue -> setText(QString::fromStdString(std::to_string(value)));
-        } else {
-            ui -> MaxValue -> setText("Incorrect DataSize");
-        }
     }
 
     if (ui -> QA -> isChecked()) {
         a = new QuickAlgorithm();
-        int data = (ui -> dataSize -> text()).toInt();
-        if (data > 0) {
+    }
+
+    int data = (ui -> dataSize -> text()).toInt();
+    if (data > 0) {
+        vector<int> values;
+        vector<int> durations;
+        for (int i = 0; i < 10; ++i) {
             a -> generate(data);
             auto begin = std::chrono::high_resolution_clock::now();
-            int value = a -> MaxSomme();
+            values.push_back(a -> MaxSomme());
             auto end = std::chrono::high_resolution_clock::now();
-            int time = std::chrono::duration_cast<std::chrono::milliseconds>(end-begin).count();
-            ui -> ExecTime -> setText(QString::fromStdString(std::to_string(time)) + " ms");
-            ui -> MaxValue -> setText(QString::fromStdString(std::to_string(value)));
-        } else {
-            ui -> MaxValue -> setText("Incorrect DataSize");
+            auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
+            durations.push_back(duration.count());
+            ui -> progressBar ->setValue(10*(i+1));
         }
+
+        int xTime;
+        for (auto time : durations) {
+            xTime += time;
+        }
+        ui -> ExecTime -> setText(QString::fromStdString(std::to_string(xTime/10)) + " ms");
+        int value;
+        for (auto val : values) {
+            value += val;
+        }
+        ui -> MaxValue -> setText(QString::fromStdString(std::to_string(value/10)));
+    } else {
+        ui -> MaxValue -> setText("Incorrect DataSize");
     }
 }
