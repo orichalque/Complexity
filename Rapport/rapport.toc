@@ -17,17 +17,18 @@
 \contentsline {subsubsection}{\numberline {3.1.1}CalculateSommeTab}{7}
 \contentsline {subsubsection}{\numberline {3.1.2}MaxSomme}{7}
 \contentsline {subsection}{\numberline {3.2}Complexit\IeC {\'e} Th\IeC {\'e}orique}{7}
-\contentsline {subsection}{\numberline {3.3}R\IeC {\'e}sultats d\IeC {\textquoteright }ex\IeC {\'e}cution}{8}
+\contentsline {subsection}{\numberline {3.3}R\IeC {\'e}sultats d\IeC {\textquoteright }ex\IeC {\'e}cution}{7}
 \contentsline {subsection}{\numberline {3.4}Analyse}{8}
 \contentsline {section}{\numberline {4}Algorithme 3: Recursive Algorithm}{8}
 \contentsline {subsection}{\numberline {4.1}Impl\IeC {\'e}mentation}{8}
-\contentsline {subsubsection}{\numberline {4.1.1}MaxSomme}{9}
-\contentsline {subsubsection}{\numberline {4.1.2}calcul3}{9}
-\contentsline {subsection}{\numberline {4.2}Complexit\IeC {\'e} Th\IeC {\'e}orique}{10}
+\contentsline {subsubsection}{\numberline {4.1.1}MaxSomme}{8}
+\contentsline {subsubsection}{\numberline {4.1.2}calcul3}{8}
+\contentsline {subsection}{\numberline {4.2}Complexit\IeC {\'e} Th\IeC {\'e}orique}{9}
 \contentsline {subsection}{\numberline {4.3}R\IeC {\'e}sultats d\IeC {\textquoteright }ex\IeC {\'e}cution}{10}
 \contentsline {subsection}{\numberline {4.4}Analyse}{11}
 \contentsline {section}{\numberline {5}Algorithme 4: Quick Algorithm}{11}
 \contentsline {subsection}{\numberline {5.1}Impl\IeC {\'e}mentation}{11}
-\contentsline {subsection}{\numberline {5.2}Complexit\IeC {\'e} Th\IeC {\'e}orique}{12}
-\contentsline {subsection}{\numberline {5.3}R\IeC {\'e}sultats d\IeC {\textquoteright }ex\IeC {\'e}cution}{12}
+\contentsline {subsection}{\numberline {5.2}Complexit\IeC {\'e} Th\IeC {\'e}orique}{11}
+\contentsline {subsection}{\numberline {5.3}R\IeC {\'e}sultats d\IeC {\textquoteright }ex\IeC {\'e}cution}{11}
 \contentsline {subsection}{\numberline {5.4}Analyse}{12}
+\contentsline {section}{\numberline {6}Conclusion}{12}

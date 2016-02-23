@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.3)  22 FEB 2016 15:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.3)  23 FEB 2016 13:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -544,155 +544,132 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ] <diagramme.png, id=16, 1042.95529pt x 351.43059pt>
 File: diagramme.png Graphic file (type png)
  <use diagramme.png>
-Package pdftex.def Info: diagramme.png used on input line 46.
+Package pdftex.def Info: diagramme.png used on input line 48.
 (pdftex.def)             Requested size: 312.88899pt x 105.42998pt.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 53.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [3
+[3
 
  <./diagramme.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 55.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
 [4] <curve_algo_1.png, id=32, 455.45157pt x 255.95625pt>
 File: curve_algo_1.png Graphic file (type png)
 
 <use curve_algo_1.png>
-Package pdftex.def Info: curve_algo_1.png used on input line 159.
+Package pdftex.def Info: curve_algo_1.png used on input line 161.
 (pdftex.def)             Requested size: 273.27304pt x 153.57492pt.
- <x_x3.png, id=33, 631.35875pt x 317.185pt>
-File: x_x3.png Graphic file (type png)
 
-<use x_x3.png>
-Package pdftex.def Info: x_x3.png used on input line 162.
-(pdftex.def)             Requested size: 252.53902pt x 126.87173pt.
-
-Overfull \hbox (1.48955pt too wide) in paragraph at lines 159--164
+Overfull \hbox (1.48955pt too wide) in paragraph at lines 161--163
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--164
-[]
- []
-
-
-Overfull \hbox (17.6248pt too wide) in paragraph at lines 131--165
+Overfull \hbox (17.6248pt too wide) in paragraph at lines 133--164
 []$[]$ $[]$ 
  []
 
-[5] [6 <./curve_algo_1.png (PNG copy)> <./x_x3.png>] [7]
-<curve_algo_2.png, id=45, 455.45157pt x 255.95625pt>
+[5] [6 <./curve_algo_1.png (PNG copy)>]
+<curve_algo_2.png, id=40, 455.45157pt x 255.95625pt>
 File: curve_algo_2.png Graphic file (type png)
  <use curve_algo_2.png>
-Package pdftex.def Info: curve_algo_2.png used on input line 258.
+Package pdftex.def Info: curve_algo_2.png used on input line 257.
 (pdftex.def)             Requested size: 273.27304pt x 153.57492pt.
 
-<x_x2.png, id=46, 632.3625pt x 314.17375pt>
-File: x_x2.png Graphic file (type png)
- <use x_x2.png>
-Package pdftex.def Info: x_x2.png used on input line 261.
-(pdftex.def)             Requested size: 252.94052pt x 125.66727pt.
-
-Overfull \hbox (1.48955pt too wide) in paragraph at lines 258--263
+Overfull \hbox (1.48955pt too wide) in paragraph at lines 257--259
 [][]
  []
 
 
-Underfull \hbox (badness 1436) in paragraph at lines 258--263
-\T1/cmr/m/n/12 On la com-pare à la courbe de $\OML/cmm/m/it/12 f\OT1/cmr/m/n/12
- (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 x=x[]$\T1/cmr/m/n/12 .
-
+Underfull \hbox (badness 1097) in paragraph at lines 257--259
+\T1/cmr/m/n/12 On re-marque ra-pi-de-ment que l'aug-men-ta-tion est
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--263
-[]
- []
-
-
-Overfull \hbox (17.6248pt too wide) in paragraph at lines 230--264
+Overfull \hbox (17.6248pt too wide) in paragraph at lines 229--260
 []$[]$ $[]$ 
  []
 
-[8 <./curve_algo_2.png (PNG copy)> <./x_x2.png>] [9]
-Overfull \hbox (170.55484pt too wide) in paragraph at lines 324--324
+[7] [8 <./curve_algo_2.png (PNG copy)>]
+Overfull \hbox (170.55484pt too wide) in paragraph at lines 320--320
 []\T1/cmtt/m/n/12 + 2*(1/2)*n   --> Méthode appelée une fois sur chaque demi ta
 bleau (de taille 1/2*n = 4) --> 2 appels[] 
  []
 
-
-Overfull \hbox (195.24881pt too wide) in paragraph at lines 324--324
+[9]
+Overfull \hbox (195.24881pt too wide) in paragraph at lines 320--320
 []\T1/cmtt/m/n/12 + 4*(1/4)*n   --> Méthode appelée une fois sur chaque quart d
 e tableau (de taille 1/4*n = 2) --> 4 appels[] 
  []
 
 
-Overfull \hbox (213.76929pt too wide) in paragraph at lines 324--324
+Overfull \hbox (213.76929pt too wide) in paragraph at lines 320--320
 []\T1/cmtt/m/n/12 + 8+(1/8)*n   --> Méthode appelée une fois sur chaque huitièm
 e de tableau (de taille 1/8*n = 1) --> 8 appels[] 
  []
 
 
-Overfull \hbox (5.187pt too wide) in paragraph at lines 342--371
+Overfull \hbox (5.187pt too wide) in paragraph at lines 338--367
 [][] 
  []
 
-<curve_algo_3.png, id=53, 455.45157pt x 255.95625pt>
+<curve_algo_3.png, id=51, 455.45157pt x 255.95625pt>
 File: curve_algo_3.png Graphic file (type png)
  <use curve_algo_3.png>
-Package pdftex.def Info: curve_algo_3.png used on input line 373.
+Package pdftex.def Info: curve_algo_3.png used on input line 369.
 (pdftex.def)             Requested size: 273.27304pt x 153.57492pt.
 
-Overfull \hbox (46.7891pt too wide) in paragraph at lines 373--374
+Overfull \hbox (46.7891pt too wide) in paragraph at lines 369--370
 [][] 
  []
 
-[10] [11 <./curve_algo_3.png (PNG copy)>]
-<curve_algo_4.png, id=60, 455.45157pt x 255.95625pt>
+[10 <./curve_algo_3.png (PNG copy)>]
+<curve_algo_4.png, id=55, 455.45157pt x 255.95625pt>
 File: curve_algo_4.png Graphic file (type png)
  <use curve_algo_4.png>
-Package pdftex.def Info: curve_algo_4.png used on input line 436.
+Package pdftex.def Info: curve_algo_4.png used on input line 430.
 (pdftex.def)             Requested size: 273.27304pt x 153.57492pt.
 
-Overfull \hbox (1.48955pt too wide) in paragraph at lines 436--441
+Overfull \hbox (1.48955pt too wide) in paragraph at lines 430--434
 [][]
  []
 
 
-Overfull \hbox (17.6248pt too wide) in paragraph at lines 409--442
+Overfull \hbox (17.6248pt too wide) in paragraph at lines 403--435
 []$[]$ $[]$ 
  []
 
-[12 <./curve_algo_4.png (PNG copy)>] (./rapport.aux) ) 
+[11] [12 <./curve_algo_4.png (PNG copy)>] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 4324 strings out of 494999
- 56375 string characters out of 6180228
+ 4314 strings out of 494999
+ 56257 string characters out of 6180228
  130611 words of memory out of 5000000
- 7445 multiletter control sequences out of 15000+600000
+ 7437 multiletter control sequences out of 15000+600000
  19453 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 38i,11n,43p,547b,434s stack positions out of 5000i,500n,10000p,200000b,80000s
- </comptes/E104607D/.texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </comptes/E104607D/.texmf-var
-/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </comptes/E104607D/.texmf-var/font
-s/pk/ljfour/jknappen/ec/eccc1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/
-ljfour/jknappen/ec/ecbx1440.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jkn
-appen/ec/ecbx1728.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen
-/ec/ecsl1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc14
-40.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.60
-0pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on rapport.pdf (12 pages, 286971 bytes).
+ 38i,11n,43p,565b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </comptes/E104607D/
+.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </comptes/E104607D/.texm
+f-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk> </comptes/E104607D/.texmf-var
+/fonts/pk/ljfour/jknappen/ec/eccc1200.600pk> </comptes/E104607D/.texmf-var/font
+s/pk/ljfour/jknappen/ec/ecbx1440.600pk> </comptes/E104607D/.texmf-var/fonts/pk/
+ljfour/jknappen/ec/ecbx1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbx1728.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jkn
+appen/ec/ecsl1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen
+/ec/ecrm1200.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
+ccc1440.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm14
+40.600pk> </comptes/E104607D/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.60
+0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on rapport.pdf (12 pages, 299146 bytes).
 PDF statistics:
- 498 PDF objects out of 1000 (max. 8388607)
+ 501 PDF objects out of 1000 (max. 8388607)
  90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

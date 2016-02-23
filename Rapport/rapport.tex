@@ -38,6 +38,8 @@ Les éléments du tableau sont choisis de manière aléatoire, et nous exécuter
 \subsection{Outils utilisés}
 Le langage de programmation à utiliser pour ce projet étant libre, j'ai choisi de m'orienter vers le C++. D'abord pour une raison pratique, l'université nous fait régulièrement utiliser ce langage. Ensuite pour des raisons de performances, car C++ reste un langage assez efficace pour effectuer des opérations comme celles de ce projet.
 Le compilateur utilisé est G++, avec la librairie C++11. Effectivement, G++ est disponible à l'université, et la librairie C++11 offre des méthodes efficaces, et surtout pratiques pour manipuler des tableaux. 
+
+Afin de rendre mon programme plus simple à utiliser, j'ai aussi implémenté une interface graphique avec Qt. Les deux sont utilisables, et les instructions d'installation sont détaillées dans le fichier README.md à l'intérieur de la racine du projet. 
 \subsection{Structure du programme}
 Quatre algorithmes étant à implémenter, j'ai choisi de créer une arborescence de classes sur un seul niveau. En haut, une classe abstraite implémentant les principales méthodes nécessaires à l’exécution des algorithmes, et en bas les algorithmes qui redéfinissent la méthode de calcul de la méthode \bsc{MaxSomme}:
 
@@ -93,7 +95,7 @@ Ainsi on a la somme des entiers de 1 à n-2 qui peut être calculée ainsi:
 $\frac{(n-3)(n-2)}{2}$
 \end{center}
 
-Sans détailler le calcul, on voit immédiatement qu'on a un produit de $n$, on peut donc en déduire une complexité en $O(n^2)$.
+Sans détailler le calcul, on voit immédiatement qu'on a un produit de $n$, on peut donc en déduire une complexité en $\theta(n^2)$.
 
 \subsubsection{Méthode: sumIndex(Int a, Int b): int}
 Cette méthode est simple, elle prend deux entiers en paramètre, qui sont chacun un indice du tableau, et calcule la somme des cases du tableau entre ces deux indices. Cet algorithme est récursif:
@@ -157,10 +159,7 @@ L'algorithme a été exécuté sur des tableaux de taille variable, de 1 à 4000
 \end{minipage}\hfill
 \begin{minipage}[c]{0.6\linewidth}
 	\includegraphics[scale=0.6]{curve_algo_1.png}
- 	Voici la courbe obtenue en calculant le rapport $n/t$. L'augmentation des données n'étant pas régulière, cette courbe est bien plus représentative de l'évolution du temps d'exécution en fonction de la taille des données.
- 	On la compare à la courbe de $f(x)=x/x^3$.
- 	\includegraphics[scale=0.4]{x_x3.png}
- 	Elles ont effectivement, à peu prêt, la même allure. 
+ 	Voici la courbe obtenue en calculant le rapport $t/n$. Elle augmente très rapidement avec la taille des données, on peut en déduire une complexité polynomiale en la taille des données, au moins. Pour un tableau de 1000 données, on est à 42ms, et pour 2000, on est à 221ms. En multipliant les données par 2 ici, on multiplie le temps par 5. De 3500 à 7000, par 8. L'augmentation n'est clairement pas linéaire, elle est proche de $f(x) = x^3$.
 \end{minipage}
 \subsection{Analyse}
 En observant les résultats d’exécution, on peut clairement voir que le temps augmente très rapidement à partir de $n=100$. On ignore les valeur antérieure car la vitesse d’exécution de l'algorithme est instantanée sur des données inférieures. En observant la courbe on remarque que la complexité temporelle correspond à la croissance de la fonction $f(x) = x^3$. Ainsi on peut affirmer que la complexité théorique calculée correspond à celle obtenue avec l'analyse de l'algorithme: $\theta (n^3)$.
@@ -256,13 +255,10 @@ Taille & Temps(millisecondes) \\
 \end{minipage}\hfill
 \begin{minipage}[c]{0.6\linewidth}
 	\includegraphics[scale=0.6]{curve_algo_2.png}
-	 	Voici la courbe obtenue en calculant le rapport $n/t$.
-	 	On la compare à la courbe de $f(x)=x/x^2$.
-	\includegraphics[scale=0.4]{x_x2.png}
-	Elles ont presque la même allure.
+	 	Voici la courbe obtenue en calculant le rapport $t/n$. On remarque rapidement que l'augmentation est moins forte que celle du premier algorithme. On peut donc déjà penser que la complexité sera au plus équivalente. De 5000 à 10 000, on multiplie par un facteur 3.8. De 15 000 à 30 000, par un facteur 3.9, et de 20 000 à 40 000 par 3.95. Quand on double la taille des données, on multiplie par 4 le temps. On peut tout de suite penser à une complexité $f(n) = n^2$.
 \end{minipage}\hfill
 \subsection{Analyse}
-La première chose que l'on puisse dire, c'est ce que cet algorithme est nettement plus efficace que le précédent. Effectivement, on s'arrête parce que la mémoire de l'ordinateur ne suffit plus. Sans ça le temps d’exécution pour un tableau de taille $n=45000$ reste tout à fait correct. On boit bien que le temps d’exécution augmente de plus en plus vite en fonction de la taille des données, on a bien une correspondance avec la complexité théorique calculée: $\theta(n^2)$.
+La première chose que l'on puisse dire, c'est ce que cet algorithme est nettement plus efficace que le précédent. Effectivement, on s'arrête parce que la mémoire de l'ordinateur ne suffit plus. Sans ça le temps d’exécution pour un tableau de taille $n=45000$ reste tout à fait correct par rapport a ce qu'on a eu précédemment. On voit bien que le temps d’exécution augmente de plus en plus vite en fonction de la taille des données, on a bien une correspondance avec la complexité théorique calculée: $\theta(n^2)$.
 
 
 \section{Algorithme 3: Recursive Algorithm}
@@ -373,17 +369,15 @@ Taille & Temps(millisecondes) \\
 	\includegraphics[scale=0.6]{curve_algo_3.png}
 	
 	
-    Voici la courbe obtenue en calculant le rapport $n/n log _2(n)$.
-    	 
-    On calcule ce rapport afin d'avoir toujours un temps d’exécution proportionnel à la taille des données, l'augmentation des données n'étant pas linéaire.
-        
-    On a une courbe qui descend progressivement, ce qui correspond bien à la complexité calculée.
+    Voici la courbe obtenue en calculant $t/n$
+    La première partie est assez instable, néanmoins à partir de $n=10 000 000$, on a une légère croissance. Notre courbe étant celle de $t/n$, on peut en déduire que c'est un facteur qui augmente très légèrement, proportionnellement à $n$.
+    On en déduit une augmentation de type $f(n) = n log n$.
 \end{minipage}\hfill
 \subsection{Analyse}
 On a des résultats nettement meilleurs que l'algorithme 2, tant en temps qu'en mémoire.
 
 Avec l'algorithme 2, pour un tableau de taille 45 000 on avait un temps d'exécution d'environ 9 secondes, alors qu'avec l'algorithme 3, pour un tableau de taille 50 000, on est à 55ms, c'est plus de 150fois mieux.
-On voit vraiment avec cet algorithme là qu'avec une différence d'un ordre de grandeur, le temps d'exécution est largement meilleur.
+La complexité théorique calculée semble de plus correspondre avec les résultats d'exécution. On se rend bien compte ici, qu'avec une différence d'un ordre de grandeur, l'amélioration des performance est fulgurante. 
  
 \section{Algorithme 4: Quick Algorithm}
 \subsection{Implémentation}
@@ -434,12 +428,16 @@ n & t(ms) \\
 \end{minipage}\hfill
 \begin{minipage}[c]{0.6\linewidth}
 	\includegraphics[scale=0.6]{curve_algo_4.png}
-	 	Voici la courbe obtenue en calculant le rapport $n/t$. 
+	 	Voici la courbe obtenue en calculant le rapport $t/n$. 
 		On remarque que au début, les valeurs sont assez variables. C'est dû au peu de précision des données avec le chronomètre utilisé, il aurait fallu une précision au nanomètre ici pour avoir des valeurs justes.
-		Néanmoins à partir de $n=4 000 000$ on remarque que la courbe est presque constante. 
-		Ca correspond tout à fait à la courbe d'une méthode de complexité $\theta(n)$.
+		Néanmoins à partir de $n=500 000$ on remarque que la courbe est presque constante. On pourrait même croire qu'elle diminue. C'est à dire que le temps d'exécution augmente en même temps, et de manière linéaire à la taille des données. On a peut donc déterminer une complexité $f(n) = n$ avec cette courbe. 
 \end{minipage}
 \subsection{Analyse}
 La courbe presque constante au dessus appuie la complexité théorique que nous avons calculé. On peut donc affirmer que la complexité de cet algorithme est en $\theta(n)$. 
 
+\section{Conclusion}
+Pour conclure ce projet, en implémentant et testant ces quatre algorithmes, on a pu voir l'importance de la complexité pour résoudre des problèmes. Effectivement, avec un algorithme efficace, on a pu traiter 250 000 000 de données, là où l'algorithme mauvais en traitait 7000. 
+
+Ainsi avant de programmer le premier algorithme qui peut nous passer par la tête, il vaut mieux réfléchir à des méthodes plus efficaces, pour ainsi réduire de manière drastique nos temps de calculs. 
+Enfin ce fût enrichissant de pouvoir mettre en pratique des connaissances vues en cours, et ainsi comprendre sur le fait accompli la différence de temps d'exécutions que peuvent avoir deux algorithmes résolvant le même problème.
 \end{document}
